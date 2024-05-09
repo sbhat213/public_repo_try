@@ -1,0 +1,322 @@
+{
+  "name": "incyte_mon_product",
+  "path": "s3://idpmonjuvietljobs-sit/tables/incyte_mon_product",
+  "partition_key": "NA",
+  "primary_key": "product_code",
+  "composite_key": ["product_code"],
+  "table_name": "i2dp_tbl_incyte_mon_product",
+  "fields": [
+    {
+      "name": "label",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "operation",
+      "data_type": "char",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "client_product_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "client_product",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "product_type",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "product_code",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "product_multiple",
+      "data_type": "bigint",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "price_per_unit",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "display_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "description_text",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "manufacturer",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "product_abbreviation_name",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "status",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "status_change_date",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "image",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "display_color",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "order_threshold",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "pre_expiry_days",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "post_expiry_days",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "reimbursable",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "no_limitation",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "client_region_id",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "client_business_unit_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "dea_schedule",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "distributor",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "nature",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "kit",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "multi_pricelist",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "prodwidth",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prodlength",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "proddepth",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "client_kit_definition_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "valid_until",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "signature_req",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "signature_flag",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "serial_num_req",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "serial_num_ship",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "inn",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "pack_size",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "shrink_size",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "order_restriction_multiple",
+      "data_type": "bigint",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "order_restriction_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "order_restriction_other_value",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "out_of_stock_from",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "product_available_date",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "stock_availability_date",
+      "data_type": "bigint",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "delivery_restriction",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "discontinued",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    }
+  ]
+}

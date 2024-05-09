@@ -1,0 +1,352 @@
+{
+  "name": "dim_spkrs",
+  "path": "s3://idpmonjuvietljobs-sit/tables/dim_spkrs",
+  "partition_key": "NA",
+  "primary_key": "src_sphase_spkr_id",
+  "composite_key": ["src_sphase_spkr_id"],
+  "table_name": "i2dp_tbl_dim_spkrs_v2",
+  "fields":[
+    {
+      "name": "speaker_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "src_sphase_spkr_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "incy_id",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "full_name",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "frst_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "last_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "mdm_pres_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "npi_num",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "profession",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "sub_profession",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "sub_grp",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "org",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "addr_line_1",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "addr_line_2",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "addr_line_3",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "county",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "state",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "zip",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "country",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "phone",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "fax",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "cell",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "pager",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "email",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "honorarium",
+      "data_type": "decimal",
+      "length": 14,
+      "core_field": true
+    },
+    {
+      "name": "spkr_tier",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "active",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "status",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "agreement",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "cont_eff_date",
+      "data_type": "date",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sb_pending_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sb_scheduled_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sb_exec_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sb_canc_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "lgp_pending_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "lgpscheduledcount",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "lgp_exec_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "lgp_canc_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sym_pend_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sym_schd_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sym_exec_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sym_canc_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "spkr_canc_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "decl_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "canc_with_honorarium_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "prev_yr_exec_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "latest_cont_exec_cnt",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "last_trained_date",
+      "data_type": "date",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "last_trg_prog_date",
+      "data_type": "date",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "flex_line_1",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "flex_line_2",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "flex_line_3",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    }
+  ]
+}

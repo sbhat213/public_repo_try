@@ -1,0 +1,424 @@
+{
+  "name": "dim_product",
+  "path": "s3://idpmonjuvietljobs-sit/tables/dim_product",
+  "partition_key": "NA",
+  "primary_key": "src_prod_id",
+  "composite_key": ["src_prod_id"],
+  "table_name": "i2dp_tbl_dim_product_v2",
+  "fields": [
+    {
+      "name": "prod_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prod_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prod_desc",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "prod_type",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "src_prod_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "label",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "operation",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "thrpy_class_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "mkt_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "brand_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "prod_fmly_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "prod_fmly_code",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "prod_display_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "prod_strength",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "status",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "stat_chge_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "unit_of_msre",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "unit_of_msre_desc",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "prod_pack_units",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "brand_gen_ind",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "prod_img",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "prod_img_url",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "display_color",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "order_threshold",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "pre_expiry_days",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "post_expiry_days",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "reimbursable",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "no_limitation",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "client_region_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "client_business_unit_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "dea_schedule",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "distributor",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "nature",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "kit",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "client_kit_defn_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "multi_pricelist",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prod_width",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prod_length",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prod_depth",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "sigr_req",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "sigr_flag",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "srl_num_req",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "srl_num_ship",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "inn",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "pack_size",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "shrink_size",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "order_restn_multi",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "order_restn_type",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "order_restn_other_value",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "out_of_stock_from",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "prod_avbl_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "stock_avbl_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "valid_fr_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "valid_to_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "manufacturer",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "delivery_restn",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "discontinued",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "unit_price",
+      "data_type": "Decimal",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "curr_cost",
+      "data_type": "Decimal",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "std_cost",
+      "data_type": "Decimal",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "list_price",
+      "data_type": "Decimal",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "list_price_base",
+      "data_type": "Decimal",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "exch_rate",
+      "data_type": "Decimal",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "base_curcy_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "src_sys_ind",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": true
+    }
+  ]
+}

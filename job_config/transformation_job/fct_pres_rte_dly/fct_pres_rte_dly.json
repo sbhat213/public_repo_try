@@ -1,0 +1,20 @@
+{
+  "id": "fct_pres_rte_dly_daily",
+  "model": "fct_pres_rte_dly",
+  "process_config": "fct_pres_rte_dly_incremental",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["fct_pres_rte_dly_to_redshift"],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}
+
+
+
+
+

@@ -1,0 +1,37 @@
+{
+  "global": {
+    "source_path": "D:\\Shared\\Indegene\\",
+    "source_app_path": "job_steps\\",
+    "deploy_app_path": "job_steps\\",
+    "deploy_path": "D:\\Shared\\build\\",
+    "external_dependencies": [
+      "aws_cloud",
+      "shared",
+      "core",
+      "settings.py"
+    ],
+    "internal_dependencies": [
+    ],
+    "file_dependencies": [
+    ]
+  },
+  "steps": [
+    {
+      "name": "kill_long_running_jobs",
+      "deploy": "True",
+      "aws": {
+        "function_name": "kill_long_running_jobs",
+        "bucket": "idpmonjuvietljobs-sit",
+        "dir": "SourceFeeds/1-deploy/"
+      },
+      "internal_dependencies": [
+        "kill_long_running_jobs",
+        "dto"
+      ],
+      "file_dependencies": [
+        "__init__.py"
+      ],
+      "action": "Lambda"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "name": "dim_pres_opt_xref_incremental",
+  "depends_on": [
+    "incyte_mon_hcp_opt",
+    "customer_master",
+    "dim_opts"
+  ],
+  "global_map": {
+    "core": {
+      "pres_opt_id": {
+        "field": "unique_id",
+        "set_on_update": false
+      },
+      "prof_id": {
+        "field": "prof_id"
+      },
+      "npi": {
+        "field": "npi"
+      },
+      "morcrmid": {
+        "field": "morcrmid"
+      },
+      "opt_topic": {
+        "field": "opt_topic",
+        "action": "lower"
+      },
+      "opt_eff_date": {
+        "field": "opt_date"
+      },
+      "source": {
+        "field": "source"
+      },
+      "row_hash": {
+        "field": "row_hash"
+      }
+    },
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "incyte_mon_hcp_opt",
+          "type": "single"
+        },
+        "filter": {
+          "prof_id": {
+            "field": "prof_id"
+          },
+          "opt_topic": {
+            "field": "opt_topic"
+          },
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "skip_update": true,
+        "map": {}
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "customer_master",
+          "type": "single"
+        },
+        "filter": {
+          "prof_id": {
+            "field": "mdm_pres_id",
+            "operator": "or"
+          },
+          "npi": {
+            "field": "npi_num",
+            "operator": "or"
+          },
+          "morcrmid": {
+            "field": "src_crm_id",
+            "operator": "or"
+          }
+        },
+        "matched": {
+          "pres_id": {
+            "field": "pres_id",
+            "comparison": "not_or_null"
+          }
+        },
+        "skip_global_core_map": true,
+        "skip_insert": true,
+        "map": {
+          "pres_id": {
+            "field": "pres_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "dim_opts",
+          "type": "single"
+        },
+        "filter": {
+          "opt_topic": {
+            "field": "opt_topic"
+          }
+        },
+        "matched": {
+          "opt_id": {
+            "field": "opt_id",
+            "comparison": "not_or_null"
+          }
+        },
+        "skip_global_core_map": true,
+        "skip_insert": true,
+        "map": {
+          "opt_id": {
+            "field": "opt_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}

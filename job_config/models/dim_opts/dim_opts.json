@@ -1,0 +1,52 @@
+{
+  "name": "dim_opts",
+  "path": "s3://idpmonjuvietljobs-sit/tables/dim_opts",
+  "partition_key": "NA",
+  "primary_key": "opt_topic",
+  "composite_key": ["opt_topic"],
+  "table_name": "i2dp_tbl_dim_opts_v2",
+  "fields": [
+    {
+      "name": "opt_id",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "opt_topic",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "opt_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    }
+  ]
+}

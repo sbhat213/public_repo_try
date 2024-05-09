@@ -1,0 +1,15 @@
+{
+  "id": "dim_spkr_programs_daily",
+  "model": "dim_spkr_programs",
+  "process_config": "dim_spkr_programs_incremental",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["dim_spkr_programs_to_redshift"],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

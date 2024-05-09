@@ -1,0 +1,586 @@
+{
+  "name": "customer_master",
+  "path": "s3://idpmonjuvietljobs-sit/tables/customer_master",
+  "partition_key": "NA",
+  "primary_key": "pres_id",
+  "composite_key": ["pres_id"],
+  "table_name": "i2dp_tbl_dim_prescriber_v2",
+  "fields": [
+    {
+      "name": "pres_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "first_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "mid_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "last_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "full_name",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": false
+    },
+    {
+      "name": "suffix",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "maiden_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "salution",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "job_title",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "mdm_pres_id",
+      "data_type": "long",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "mdm_src_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "src_crm_id",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "addr_line_1",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "addr_line_2",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "addr_line_3",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "state",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "zip",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": false
+    },
+    {
+      "name": "zip_4",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": false
+    },
+    {
+      "name": "ama_num",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "ama_pdrp_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "ama_pdrp_eff_dt",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "ama_no_contact",
+      "data_type": "varchar",
+      "length": 15,
+      "core_field": true
+    },
+    {
+      "name": "dob",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "dob_year",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "age",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "gender",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "degree",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "grad_school",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "grad_year",
+      "data_type": "varchar",
+      "length": 5,
+      "core_field": true
+    },
+    {
+      "name": "npi_num",
+      "data_type": "long",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "fed_tax_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "medpro_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "me_num",
+      "data_type": "long",
+      "length": 11,
+      "core_field": true
+    },
+    {
+      "name": "ma_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "dea_num",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "st_lic_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "dmd_dgid",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "rental_email",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "rental_email_exprn_dt",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "global_exclude",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "spec1_code",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "spec1_desc",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "spec2_code",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "spec2_desc",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "spec3_code",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "spec3_desc",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "spec4_code",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "spec4_desc",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "is_academy",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "is_community",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "is_incyte_target",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "is_npp_target",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "is_morphosys_target",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "incyte_target_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "morphosys_target_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "src_sfmc_subscriber_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "email_id_1",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "email_id_2",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "do_not_bulk_email_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "do_not_bulk_dmail_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "do_not_email_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "email_unsub_date",
+      "data_type": "date",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "do_not_fax_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "do_not_phone_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "do_not_market_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "do_not_send_sms_flg",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "pres_spnd_sub_typ_cd",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "pres_spnd_typ_cd",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "status_code",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "is_investigator",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "investigator_type",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "is_speaker",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "speaker_type",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "is_early_adoptor",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "is_kol",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "kol_tier",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "residency_ind",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "src_sys_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "attr_1",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_2",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_3",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_4",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_5",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_6",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_7",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_8",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_9",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "attr_10",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "error_flag",
+      "data_type": "char",
+      "length": 1,
+      "core_field": false
+    },
+    {
+      "name": "error_reason",
+      "data_type": "varchar",
+      "length": 500,
+      "core_field": false
+    },
+    {
+      "name": "error_date",
+      "data_type": "datetime",
+      "length": 25,
+      "core_field": false
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 200,
+      "core_field": true
+    }
+  ]
+}

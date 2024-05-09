@@ -1,0 +1,52 @@
+{
+  "name": "phm_daily_search_hcp",
+  "depends_on": [
+  ],
+  "global_map": {
+  },
+  "steps": [
+    {
+      "name": "ReadCSV",
+      "params": {
+        "separator": ","
+      }
+    },
+    {
+      "name": "AddHash",
+      "field": "row_hash"
+    },
+    {
+      "name": "RemoveDuplicate"
+    },
+    {
+      "name": "AddUniqueId",
+      "field": "unique_id"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "type": "self"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "map": {
+          "unique_id": {
+            "field": "unique_id",
+            "set_on_update": false
+          },
+          "created_date": {
+            "action": "current_date",
+            "set_on_update": false
+          },
+          "updated_date": {
+            "action": "current_date"
+          }
+        }
+      }
+    }
+  ]
+}

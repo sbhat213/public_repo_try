@@ -1,0 +1,37 @@
+{
+  "global": {
+    "source_path": "D:\\Shared\\Indegene\\",
+    "source_app_path": "job_steps\\",
+    "deploy_app_path": "job_steps\\",
+    "deploy_path": "D:\\Shared\\build\\",
+    "external_dependencies": [
+      "aws_cloud",
+      "shared",
+      "core",
+      "settings.py"
+    ],
+    "internal_dependencies": [
+    ],
+    "file_dependencies": [
+    ]
+  },
+  "steps": [
+    {
+      "name": "send_failure_notification",
+      "deploy": "True",
+      "aws": {
+        "function_name": "send_failure_notification",
+        "bucket": "idpmonjuvietljobs-sit",
+        "dir": "SourceFeeds/1-deploy/"
+      },
+      "internal_dependencies": [
+        "send_failure_notification",
+        "dto"
+      ],
+      "file_dependencies": [
+        "__init__.py"
+      ],
+      "action": "Lambda"
+    }
+  ]
+}

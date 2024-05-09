@@ -1,0 +1,15 @@
+{
+  "id": "fct_pres_engmt_activity_dtl_daily",
+  "model": "fct_pres_engmt_activity_dtl",
+  "process_config": "fct_pres_engmt_activity_dtl_incremental",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["fct_pres_engmt_activity_dtl_to_redshift"],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

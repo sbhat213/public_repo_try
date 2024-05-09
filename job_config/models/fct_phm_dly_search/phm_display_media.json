@@ -1,0 +1,88 @@
+{
+  "name": "phm_display_media",
+  "path": "s3://idpmonjuvietljobs-sit/tables/phm_display_media",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_phm_display_media",
+  "fields": [
+    {
+      "name": "date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "campaign",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "campaign_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "site_dcm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "site_id_dcm",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "placement",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "placement_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "impressions",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "clicks",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

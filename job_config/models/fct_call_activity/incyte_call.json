@@ -1,0 +1,172 @@
+{
+  "name": "incyte_call",
+  "path": "s3://idpmonjuvietljobs-sit/tables/incyte_call",
+  "partition_key": "NA",
+  "primary_key": "call_transaction_id",
+  "composite_key": ["call_transaction_id"],
+  "table_name": "i2dp_tbl_incyte_call",
+  "fields": [
+    {
+      "name": "call_transaction_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "call_record_type",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "group_call_flag",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "parent_call_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "territory_id",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "user_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "username",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "mdm_id",
+      "data_type": "varchar",
+      "length": 8,
+      "core_field": true
+    },
+    {
+      "name": "first_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "last_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "org_name",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": false
+    },
+    {
+      "name": "mdm_loc_id",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "address_line_1",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "address_line_2",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "state",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "zip",
+      "data_type": "varchar",
+      "length": 5,
+      "core_field": true
+    },
+    {
+      "name": "call_type",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "call_method",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "call_date",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "team_id",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "createddate",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "status",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

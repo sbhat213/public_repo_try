@@ -1,0 +1,141 @@
+{
+  "name": "fct_pres_email_bounces_dly_incremental",
+  "depends_on": [
+    "sfmc_bounces",
+    "customer_master"
+  ],
+  "global_map": {
+    "core": {
+      "row_hash": {
+        "field": "row_hash"
+      }
+    },
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "sfmc_bounces",
+          "type": "single"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "skip_update": true,
+        "map": {
+          "subscriber_key": {
+            "field": "subscriber_key"
+          },
+          "evnt_date": {
+            "field": "date"
+          },
+          "evnt_type": {
+            "field": "event_type"
+          },
+          "sender_id": {
+            "field": "send_id"
+          },
+          "bacth_id": {
+            "field": "batch_id"
+          },
+          "bounc_catg": {
+            "field": "bounce_category"
+          },
+          "bounc_type": {
+            "field": "bounce_type"
+          },
+          "smtp_code": {
+            "field": "smtp_code"
+          },
+          "smtp_reason": {
+            "field": "smtp_reason"
+          },
+          "defn_obj_id": {
+            "field": "definition_object_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "customer_master",
+          "type": "single"
+        },
+        "filter": {
+          "subscriber_key": {
+            "field": "mdm_pres_id"
+          }
+        },
+        "matched": {
+          "pres_id": {
+            "field": "pres_id",
+            "comparison": "not_or_null"
+          }
+        },
+        "skip_global_core_map": true,
+        "skip_insert": true,
+        "map": {
+          "pres_id": {
+            "field": "pres_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,250 @@
+{
+  "name": "fct_phm_dly_search_incremental",
+  "depends_on": [
+    "phm_daily_search_dtc",
+    "phm_daily_search_hcp",
+    "phm_display_media"
+  ],
+  "global_map": {
+    "core": {
+      "phm_search_id": {
+        "field": "unique_id",
+        "set_on_update": false
+      },
+      "src_cmpgn_id": {
+        "field": "campaign_id"
+      },
+      "src_cmpgn_nm": {
+        "field": "campaign"
+      },
+      "no_of_clicks": {
+        "field": "clicks"
+      },
+      "row_hash": {
+        "field": "row_hash"
+      }
+    },
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "phm_daily_search_dtc",
+          "type": "single"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "skip_update": true,
+        "map": {
+          "media_type": {
+            "field": "row_type"
+          },
+          "search_type": {
+            "value": "DTC",
+            "action": "fixed"
+          },
+          "ad_grp_id": {
+            "field": "ad_group_id"
+          },
+          "ad_grp_name": {
+            "field": "ad_group"
+          },
+          "src_acct_id": {
+            "field": "account_id"
+          },
+          "src_acct_nm": {
+            "field": "account"
+          },
+          "from_date": {
+            "field": "from"
+          },
+          "to_date": {
+            "field": "to"
+          },
+          "cmpgn_stat": {
+            "field": "status"
+          },
+          "ad_engn": {
+            "field": "engine"
+          },
+          "no_of_impr": {
+            "field": "impr"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "phm_daily_search_hcp",
+          "type": "single"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "skip_update": true,
+        "map": {
+          "media_type": {
+            "field": "row_type"
+          },
+          "search_type": {
+            "value": "HCP",
+            "action": "fixed"
+          },
+          "ad_grp_id": {
+            "field": "ad_group_id"
+          },
+          "ad_grp_name": {
+            "field": "ad_group"
+          },
+          "src_acct_id": {
+            "field": "account_id"
+          },
+          "src_acct_nm": {
+            "field": "account"
+          },
+          "from_date": {
+            "field": "from"
+          },
+          "to_date": {
+            "field": "to"
+          },
+          "cmpgn_stat": {
+            "field": "status"
+          },
+          "ad_engn": {
+            "field": "engine"
+          },
+          "no_of_impr": {
+            "field": "impr"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "phm_display_media",
+          "type": "single"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "skip_update": true,
+        "map": {
+          "search_type": {
+            "value": "DISPLAY",
+            "action": "fixed"
+          },
+          "from_date": {
+            "field": "date"
+          },
+          "to_date": {
+            "field": "date"
+          },
+          "no_of_impr": {
+            "field": "impressions"
+          },
+          "src_site_nm": {
+            "field": "site_dcm"
+          },
+          "src_site_id": {
+            "field": "site_id_dcm"
+          },
+          "src_plcmt": {
+            "field": "placement"
+          },
+          "src_plcmt_id": {
+            "field": "placement_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}

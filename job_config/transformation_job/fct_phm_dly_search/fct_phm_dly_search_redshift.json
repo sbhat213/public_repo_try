@@ -1,0 +1,15 @@
+{
+  "id": "fct_phm_dly_search_to_redshift",
+  "model": "fct_phm_dly_search",
+  "process_config": "fct_phm_dly_search_redshift",
+  "active": true,
+  "status": 0,
+  "is_dependent": true,
+  "dependent_jobs": [],
+  "frequency": {
+    "schedule_interval": "weekly"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 0
+}

@@ -1,0 +1,334 @@
+{
+  "name": "mor_inc_engmnt",
+  "path": "s3://idpmonjuvietljobs-sit/tables/mor_inc_engmnt",
+  "partition_key": "NA",
+  "primary_key": "call_id",
+  "composite_key": ["call_id"],
+  "table_name": "i2dp_tbl_mor_inc_engmnt",
+  "fields": [
+    {
+      "name": "mdm_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "first_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "last_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "acct_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "acct_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "crm_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "addr_ln_1",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "addr_ln_2",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "addr",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "call_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "call_dt",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": false
+    },
+    {
+      "name": "call_type",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "st",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sec_zip",
+      "data_type": "bigint",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "zip",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "prod_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "dtl_prod",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "comp_flag",
+      "data_type": "varchar",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "call_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "is_prnt_call",
+      "data_type": "char",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "prnt_call_id",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "is_smpl_call",
+      "data_type": "char",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "call_status",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "geo_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "geo_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "duration",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "attendee_type",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "quintile",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "dea_num",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "hin",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "spec",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "spec_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "segment",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": false
+    },
+    {
+      "name": "tgt_status",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "phone",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "email",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "pdrp_flg",
+      "data_type": "char",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "lat",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "long",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "kaiser",
+      "data_type": "char",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "is_academic",
+      "data_type": "varchar",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "is_community",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "cot",
+      "data_type": "char",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "npi_num",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "entity_type",
+      "data_type": "char",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sf_typ",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "is_deleted",
+      "data_type": "char",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "user_id",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "user_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "fact_call_activity_to_redshift",
+  "model": "fact_call_activity",
+  "process_config": "fact_call_activity_redshift",
+  "active": true,
+  "status": 0,
+  "is_dependent": true,
+  "dependent_jobs": [],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 0
+}

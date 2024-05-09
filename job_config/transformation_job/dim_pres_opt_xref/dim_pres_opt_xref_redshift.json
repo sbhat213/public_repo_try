@@ -1,0 +1,15 @@
+{
+  "id": "dim_pres_opt_xref_to_redshift",
+  "model": "dim_pres_opt_xref",
+  "process_config": "dim_pres_opt_xref_redshift",
+  "active": true,
+  "status": 0,
+  "is_dependent": true,
+  "dependent_jobs": [],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 0
+}

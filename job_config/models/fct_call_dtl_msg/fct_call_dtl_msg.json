@@ -1,0 +1,112 @@
+{
+  "name": "fct_call_dtl_msg",
+  "path": "s3://idpmonjuvietljobs-sit/tables/fct_call_dtl_msg",
+  "partition_key": "NA",
+  "primary_key": "call_dtl_msg_id",
+  "composite_key": ["call_dtl_msg_id"],
+  "table_name": "i2dp_tbl_fct_call_dtl_msg_v2",
+  "fields": [
+    {
+      "name": "call_dtl_msg_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "call_acty_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "call_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "call_transaction_id",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "call_dtl_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "call_mesg_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "call_dtl_prity",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "prod_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "product_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "prod_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "prod_mesg_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "prod_mesg_txt",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "src_sys_nm",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "LambdaExecutionRole": {
+    "custom": {
+      "action": [
+        "dynamodb:DescribeContributorInsights",
+        "dynamodb:RestoreTableToPointInTime",
+        "dynamodb:UpdateGlobalTable",
+        "dynamodb:UpdateTableReplicaAutoScaling",
+        "dynamodb:DescribeTable",
+        "dynamodb:PartiQLInsert",
+        "dynamodb:GetItem",
+        "dynamodb:DescribeContinuousBackups",
+        "dynamodb:DescribeExport",
+        "dynamodb:EnableKinesisStreamingDestination",
+        "dynamodb:BatchGetItem",
+        "dynamodb:DisableKinesisStreamingDestination",
+        "dynamodb:UpdateTimeToLive",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem",
+        "dynamodb:PartiQLUpdate",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem",
+        "dynamodb:UpdateGlobalTableSettings",
+        "dynamodb:CreateTable",
+        "dynamodb:GetShardIterator",
+        "dynamodb:DescribeReservedCapacity",
+        "dynamodb:ExportTableToPointInTime",
+        "dynamodb:DescribeBackup",
+        "dynamodb:UpdateTable",
+        "dynamodb:GetRecords",
+        "dynamodb:DescribeTableReplicaAutoScaling",
+        "dynamodb:ListTables",
+        "dynamodb:DeleteItem",
+        "dynamodb:PurchaseReservedCapacityOfferings",
+        "dynamodb:CreateTableReplica",
+        "dynamodb:ListTagsOfResource",
+        "dynamodb:UpdateContributorInsights",
+        "dynamodb:CreateBackup",
+        "dynamodb:UpdateContinuousBackups",
+        "dynamodb:DescribeReservedCapacityOfferings",
+        "dynamodb:TagResource",
+        "dynamodb:PartiQLSelect",
+        "dynamodb:CreateGlobalTable",
+        "dynamodb:DescribeKinesisStreamingDestination",
+        "dynamodb:DescribeLimits",
+        "dynamodb:ListExports",
+        "dynamodb:UntagResource",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:ListBackups",
+        "dynamodb:Query",
+        "dynamodb:DescribeStream",
+        "dynamodb:DescribeTimeToLive",
+        "dynamodb:ListStreams",
+        "dynamodb:ListContributorInsights",
+        "dynamodb:DescribeGlobalTableSettings",
+        "dynamodb:ListGlobalTables",
+        "dynamodb:DescribeGlobalTable",
+        "dynamodb:RestoreTableFromBackup",
+        "dynamodb:DeleteBackup",
+        "dynamodb:PartiQLDelete",
+        "s3:GetObject"
+      ],
+      "resources": [
+        "*"
+      ]
+    },
+    "standard": [
+      "AWSLambdaInvocation-DynamoDB",
+      "AmazonSESFullAccess",
+      "service-role/AmazonElasticMapReduceRole",
+      "service-role/AWSLambdaDynamoDBExecutionRole",
+      "AmazonEC2FullAccess",
+      "AmazonElasticMapReduceFullAccess",
+      "AmazonSESFullAccess",
+      "AWSStepFunctionsFullAccess"
+    ],
+    "service-principal": "lambda.amazonaws.com"
+  },
+  "job_scheduler_role": {
+    "custom": {
+      "action": [
+        "lambda:InvokeFunction"
+      ],
+      "resources": [
+        "arn:aws:lambda:us-east-1:740277878297:function:check_available_files:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:check_emr_cluster:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:wait_cluster_creation:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:save_source_file:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:get_active_emr:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:create_emr_cluster:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:schedule_job:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:run_spark_job:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:wait_run_spark_job:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:copy_to_redshift:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:remove_emr_cluster:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:check_scheduled_jobs:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:check_inprogress_files:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:send_failure_notification:*"
+      ]
+    },
+    "standard": [
+      "CloudWatchLogsFullAccess"
+    ],
+    "service-principal": "states.amazonaws.com"
+  },
+  "spark_job_role": {
+    "custom": {
+      "action": [
+        "lambda:InvokeFunction"
+      ],
+      "resources": [
+        "arn:aws:lambda:us-east-1:740277878297:function:check_available_files:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:check_emr_cluster:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:wait_cluster_creation:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:save_source_file:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:get_active_emr:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:create_emr_cluster:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:schedule_job:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:run_spark_job:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:wait_run_spark_job:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:copy_to_redshift:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:remove_emr_cluster:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:check_scheduled_jobs:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:check_inprogress_files:*",
+        "arn:aws:lambda:us-east-1:740277878297:function:send_failure_notification:*"
+      ]
+    },
+    "standard": [
+      "AmazonSESFullAccess",
+      "AWSLambdaExecute",
+      "CloudWatchLogsFullAccess"
+    ],
+    "service-principal": "states.amazonaws.com"
+  }
+}

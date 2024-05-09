@@ -1,0 +1,70 @@
+{
+  "name": "incyte_call_messages",
+  "path": "s3://idpmonjuvietljobs-sit/tables/incyte_call_messages",
+  "partition_key": "NA",
+  "primary_key": "call_message_id",
+  "composite_key": ["call_message_id"],
+  "table_name": "i2dp_tbl_incyte_call_messages",
+  "fields": [
+    {
+      "name": "call_transaction_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "call_detail_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "call_message_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "product",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "product_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "product_message",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "product_message_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

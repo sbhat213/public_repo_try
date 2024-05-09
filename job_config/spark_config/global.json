@@ -1,0 +1,13 @@
+{
+  "name": "global",
+  "conf": {
+    "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension",
+    "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog"
+  },
+  "driver_memory": "",
+  "driver_cores": "2",
+  "executor_memory": "",
+  "executor_cores": "2",
+  "executors": "2",
+  "approximate_execution_Time": "5"
+}

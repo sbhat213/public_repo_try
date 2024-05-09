@@ -1,0 +1,245 @@
+{
+  "name": "dim_spkrs_incremental",
+  "depends_on": [
+    "sphase_monjuvi_speakers",
+    "customer_master"
+  ],
+  "global_map": {
+    "core": {},
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "speakers_customer_merged",
+          "type": "multi",
+          "join_operator": "or",
+          "tables": [
+            {
+              "table": "sphase_monjuvi_speakers",
+              "field": ["incy_id","npi"]
+            },
+            {
+              "table": "customer_master",
+              "field": ["mdm_pres_id","npi_num"]
+            }
+          ],
+          "duplicate_check": true
+        },
+        "filter": {
+          "src_sphase_spkr_id": {
+            "field": "suid"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "map": {
+          "speaker_id": {
+            "field": "unique_id"},
+          "mdm_pres_id": {
+            "field": "pres_id"},
+          "src_sphase_spkr_id": {
+            "field": "suid"
+          },
+          "full_name": {
+            "field": "fullname"
+          },
+          "frst_name": {
+            "field": "firstname"
+          },
+          "last_name": {
+            "field": "lastname"
+          },
+          "incy_id": {
+            "field": "incy_id"
+          },
+          "npi_num": {
+            "field": "npi"
+          },
+          "profession": {
+            "field": "profession"
+          },
+          "sub_profession": {
+            "field": "subprofession"
+          },
+          "sub_grp": {
+            "field": "subgroup"
+          },
+          "org": {
+            "field": "institution"
+          },
+          "addr_line_1": {
+            "field": "address1"
+          },
+          "addr_line_2": {
+            "field": "address2"
+          },
+          "addr_line_3": {
+            "field": "address3"
+          },
+          "city": {
+            "field": "city"
+          },
+          "county": {
+            "field": "county"
+          },
+          "state": {
+            "field": "state"
+          },
+          "zip": {
+            "field": "zip"
+          },
+          "country": {
+            "field": "country"
+          },
+          "phone": {
+            "field": "phone"
+          },
+          "fax": {
+            "field": "fax"
+          },
+          "cell": {
+            "field": "cell"
+          },
+          "pager": {
+            "field": "pager"
+          },
+          "email": {
+            "field": "email"
+          },
+          "honorarium": {
+            "field": "honorarium"
+          },
+          "spkr_tier": {
+            "field": "speakertier"
+          },
+          "active": {
+            "field": "active"
+          },
+          "status": {
+            "field": "status"
+          },
+          "agreement": {
+            "field": "agreement"
+          },
+          "cont_eff_date": {
+            "field": "contracteffectivedate"
+          },
+          "sb_pending_cnt": {
+            "field": "sbpendingcount"
+          },
+          "sb_scheduled_cnt": {
+            "field": "sbscheduledcount"
+          },
+          "sb_exec_cnt": {
+            "field": "sbexecutedcount"
+          },
+          "sb_canc_cnt": {
+            "field": "sbcanceledcount"
+          },
+          "lgp_pending_cnt": {
+            "field": "lgppendingcount"
+          },
+          "lgpscheduledcount": {
+            "field": "lgpscheduledcount"
+          },
+          "lgp_exec_cnt": {
+            "field": "lgpexecutedcount"
+          },
+          "lgp_canc_cnt": {
+            "field": "lgpcanceledcount"
+          },
+          "sym_pend_cnt": {
+            "field": "sympendingcount"
+          },
+          "sym_schd_cnt": {
+            "field": "symscheduledcount"
+          },
+          "sym_exec_cnt": {
+            "field": "symexecutedcount"
+          },
+          "sym_canc_cnt": {
+            "field": "symcanceledcount"
+          },
+          "spkr_canc_cnt": {
+            "field": "speakercancelledcount"
+          },
+          "decl_cnt": {
+            "field": "declinedcount"
+          },
+          "canc_with_honorarium_cnt": {
+            "field": "canceledwhonorariumcount"
+          },
+          "prev_yr_exec_cnt": {
+            "field": "prevyearexecutedcount"
+          },
+          "latest_cont_exec_cnt": {
+            "field": "latestcontractexecutedcount"
+          },
+          "last_trained_date": {
+            "field": "lasttraineddate"
+          },
+          "last_trg_prog_date": {
+            "field": "lasttrainingprogramdate"
+          },
+          "flex_line_1": {
+            "field": "flex_field1"
+          },
+          "flex_line_2": {
+            "field": "flex_field2"
+          },
+          "flex_line_3": {
+            "field": "flex_field3"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}
+
+
+
+

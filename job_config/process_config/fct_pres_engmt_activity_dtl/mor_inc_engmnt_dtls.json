@@ -1,0 +1,32 @@
+{
+  "name": "mor_inc_engmnt_dtls",
+  "depends_on": [
+  ],
+  "global_map": {
+  },
+  "steps": [
+    {
+      "name": "ReadCSV",
+      "params": {
+        "separator": "|"
+      }
+    },
+    {
+      "name": "AddHash",
+      "field": "row_hash"
+    },
+    {
+      "name": "RemoveDuplicate"
+    },
+    {
+      "name": "AddUniqueId",
+      "field": "unique_id"
+    },
+    {
+      "name": "SaveDeltaTable",
+      "params": {
+        "overwrite": true
+      }
+    }
+  ]
+}

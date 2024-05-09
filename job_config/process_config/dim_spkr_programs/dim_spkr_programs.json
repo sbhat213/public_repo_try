@@ -1,0 +1,228 @@
+{
+  "name": "dim_spkr_programs_incremental",
+  "depends_on": [
+    "sphase_monjuvi_programs"
+  ],
+  "global_map": {
+    "core": {
+    },
+    "audit": {
+      "created_by": {
+        "action": "job_name"
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date"
+        },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "DeleteDeltaRecord",
+      "params": {
+        "filter_column": "src_sys_nm",
+        "filter_value": "SPKR_PROGRAMS"
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "sphase_monjuvi_programs",
+          "type": "single"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "skip_update": true,
+        "map": {
+          "spkr_prog_id": {
+            "field": "unique_id"
+          },
+          "row_hash": {
+            "field": "row_hash"
+          },
+          "prog_code": {
+            "field": "job_name"
+          },
+          "geo_id": {
+            "field": "arterr"
+          },
+          "rep_frst_name": {
+            "field": "arfirst"
+          },
+          "rep_last_name": {
+            "field": "arlast"
+          },
+          "geo_name": {
+            "field": "arareaname"
+          },
+          "area_mgr_frst_name": {
+            "field": "amfirst"
+          },
+          "area_mgr_last_name": {
+            "field": "amlast"
+          },
+          "area_id": {
+            "field": "amterr"
+          },
+          "area_name": {
+            "field": "amareaname"
+          },
+          "region_dir_frst_name": {
+            "field": "rdfirst"
+          },
+          "region_dir_lastst_name": {
+            "field": "rdlast"
+          },
+          "region_id": {
+            "field": "rdterr"
+          },
+          "region_name": {
+            "field": "rdareaname"
+          },
+          "evnt_coord": {
+            "field": "coordinator"
+          },
+          "evnt_status": {
+            "field": "status"
+          },
+          "evnt_canc_reas": {
+            "field": "cancelreason"
+          },
+          "prestn_mode": {
+            "field": "presentation"
+          },
+          "sub_prestn_mode": {
+            "field": "subpresentation"
+          },
+          "sb_type": {
+            "field": "sbtype"
+          },
+          "network_type": {
+            "field": "network"
+          },
+          "evnt_type": {
+            "field": "projecttype"
+          },
+          "evnt_topic": {
+            "field": "topic"
+          },
+          "evnt_title": {
+            "field": "title"
+          },
+          "prod_name": {
+            "field": "product"
+          },
+          "abbr_title": {
+            "field": "abbrvtitle"
+          },
+          "tumor": {
+            "field": "tumor"
+          },
+          "no_confr_attendees": {
+            "field": "confirmed"
+          },
+          "no_of_attendees": {
+            "field": "attendees"
+          },
+          "out_of_pckt_amt": {
+            "field": "outofpocket"
+          },
+          "honorarium_amt": {
+            "field": "honorarium"
+          },
+          "evnt_fee": {
+            "field": "fee"
+          },
+          "evnt_start_date": {
+            "field": "startdate",
+            "action": "date_formatter"
+          },
+          "evnt_start_time": {
+            "field": "starttime"
+          },
+          "evnt_end_date": {
+            "field": "enddate",
+            "action": "date_formatter"
+          },
+          "evnt_end_time": {
+            "field": "endtime"
+          },
+          "venue": {
+            "field": "venue"
+          },
+          "addr_line_1": {
+            "field": "address1"
+          },
+          "addr_line_2": {
+            "field": "address2"
+          },
+          "addr_line_3": {
+            "field": "address3"
+          },
+          "city": {
+            "field": "city"
+          },
+          "state": {
+            "field": "state"
+          },
+          "zip": {
+            "field": "zip"
+          },
+          "cancl_email_sent_date": {
+            "field": "canceledemailsentdate",
+            "action": "date_formatter"
+          },
+          "meal_cost": {
+            "field": "mealcost"
+          },
+          "flex_field1": {
+            "field": "flex_field1"
+          },
+          "flex_field2": {
+            "field": "flex_field2"
+          },
+          "flex_field3": {
+            "field": "flex_field3"
+          },
+          "src_sys_nm": {
+            "value": "SPKR_PROGRAMS",
+            "action": "fixed"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}
+
+
+

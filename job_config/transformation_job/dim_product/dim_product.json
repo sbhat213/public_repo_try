@@ -1,0 +1,15 @@
+{
+  "id": "dim_product_daily",
+  "model": "dim_product",
+  "process_config": "dim_product_incremental",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["dim_product_to_redshift"],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

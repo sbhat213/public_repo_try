@@ -1,0 +1,200 @@
+{
+  "name": "dim_geo_hier_incremental",
+  "depends_on": [
+    "incyte_terr_hierarchy",
+    "mor_inc_terr_hier"
+  ],
+  "global_map": {
+    "core": {},
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "incyte_terr_hierarchy",
+          "type": "single"
+        },
+        "filter": {
+          "geo_id": {
+            "field": "terr_id"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "map": {
+          "geo_id": {
+            "field": "terr_id"
+          },
+          "geo_name": {
+            "field": "terr_name"
+          },
+          "geo_level_type": {
+            "value": "TERRITORY",
+            "action": "fixed"
+          },
+          "geo_level1_id": {
+            "field": "region_id"
+          },
+          "geo_level1_name": {
+            "field": "region_name"
+          },
+          "geo_level1_type": {
+            "value": "REGION",
+            "action": "fixed"
+          },
+          "geo_level2_id": {
+            "field": "area_id"
+          },
+          "geo_level2_name": {
+            "field": "area_name"
+          },
+          "geo_level2_type": {
+            "value": "AREA",
+            "action": "fixed"
+          },
+          "geo_level3_id": {
+            "field": "nation_id"
+          },
+          "geo_level3_name": {
+            "field": "nation_name"
+          },
+          "geo_level3_type": {
+            "value": "NATION",
+            "action": "fixed"
+          },
+          "sf_typ": {
+            "field": "team_name"
+          },
+          "src_sys_nm": {
+            "value": "INCYTE",
+			"action": "fixed"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "mor_inc_terr_hier",
+          "type": "single"
+        },
+        "filter": {
+          "geo_id": {
+            "field": "geo_id"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "map": {
+          "geo_id": {
+            "field": "geo_id"
+          },
+          "geo_name": {
+            "field": "geo_nm"
+          },
+          "geo_level_type": {
+            "field": "geo_lvl_typ"
+          },
+          "geo_level1_id": {
+            "field": "geo_lvl_id"
+          },
+          "geo_level1_name": {
+            "field": "geo_lvl1_nm"
+          },
+          "geo_level1_type": {
+            "value": "REGION",
+            "action": "fixed"
+          },
+          "geo_level2_id": {
+            "field": "geo_lvl2_id"
+          },
+          "geo_level2_name": {
+            "field": "geo_lvl2_nm"
+          },
+          "geo_level2_type": {
+            "value": "AREA",
+            "action": "fixed"
+          },
+          "geo_level3_id": {
+            "field": "geo_lvl3_id"
+          },
+          "geo_level3_name": {
+            "field": "geo_lvl3_nm"
+          },
+          "geo_level3_type": {
+            "value": "NATION",
+            "action": "fixed"
+          },
+          "sf_typ": {
+            "field": "sf_typ"
+          },
+          "src_sys_nm": {
+            "value": "MORPHOSYS",
+			"action": "fixed"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}

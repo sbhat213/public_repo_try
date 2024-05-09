@@ -1,0 +1,4 @@
+injector==0.18.4
+pynamodb==4.3.3
+requests==2.25.1
+boto3

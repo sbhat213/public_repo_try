@@ -1,0 +1,71 @@
+{
+  "name": "sphase_monjuvi_speakers",
+  "depends_on": [
+  ],
+  "global_map": {
+  },
+  "steps": [
+    {
+      "name": "ReadCSV",
+      "params": {
+        "separator": "|"
+      }
+    },
+    {
+      "name": "RemoveDuplicate"
+    },
+    {
+      "name": "AddHash",
+      "field": "row_hash"
+    },
+    {
+      "name": "AddUniqueId",
+      "field": "unique_id"
+    },
+
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "type": "self"
+        },
+        "filter": {
+          "suid": {
+            "field": "suid"
+          }
+        },
+        "matched": {
+          "row_hash": {
+            "field": "row_hash",
+            "comparison": "not"
+          }
+        },
+        "map": {
+          "unique_id": {
+            "field": "unique_id",
+            "set_on_update": false
+          },
+          "contracteffectivedate": {
+            "field": "contracteffectivedate",
+            "action": "date_formatter"
+          },
+          "lasttraineddate": {
+            "field": "lasttraineddate",
+            "action": "date_formatter"
+          },
+          "lasttrainingprogramdate": {
+            "field": "lasttrainingprogramdate",
+            "action": "date_formatter"
+          },
+          "created_date": {
+            "action": "current_date",
+            "set_on_update": false
+          },
+          "updated_date": {
+            "action": "current_date"
+          }
+        }
+      }
+    }
+  ]
+}

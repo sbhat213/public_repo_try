@@ -1,0 +1,322 @@
+{
+  "name": "sphase_monjuvi_programs",
+  "path": "s3://idpmonjuvietljobs-sit/tables/sphase_monjuvi_programs",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_sphase_programs",
+  "fields": [
+    {
+      "name": "startdate",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "job_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "arfirst",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "arlast",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "arterr",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "arareaname",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "amfirst",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "amlast",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "amterr",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "amareaname",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "rdfirst",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "rdlast",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "rdterr",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "rdareaname",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "coordinator",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "status",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "cancelreason",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "presentation",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "subpresentation",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "sbtype",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "network",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "projecttype",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "topic",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "title",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "product",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "abbrvtitle",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "tumor",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "confirmed",
+      "data_type": "bigint",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "attendees",
+      "data_type": "bigint",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "outofpocket",
+      "data_type": "decimal",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "honorarium",
+      "data_type": "decimal",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "fee",
+      "data_type": "decimal",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "starttime",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "enddate",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "endtime",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "venue",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "address1",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "address2",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "address3",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "state",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "zip",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "createdate",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "canceledemailsentdate",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "mealcost",
+      "data_type": "decimal",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "flex_field1",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "flex_field2",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "flex_field3",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    }
+  ]
+}

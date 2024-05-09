@@ -1,0 +1,15 @@
+{
+  "id": "customer_master_history",
+  "model": "customer_master",
+  "process_config": "customer_master_static",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["customer_master_daily"],
+  "frequency": {
+    "schedule_interval": "onetime"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

@@ -1,0 +1,48 @@
+{
+  "name": "sfmc_opens",
+  "depends_on": [
+  ],
+  "global_map": {
+  },
+  "steps": [
+    {
+      "name": "ReadCSV",
+      "params": {
+        "separator": ","
+      }
+    },
+    {
+      "name": "AddHash",
+      "field": "row_hash"
+    },
+    {
+      "name": "RemoveDuplicate"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "type": "self"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "map": {
+          "date": {
+            "field": "date",
+            "action": "date_formatter"
+          },
+          "created_date": {
+            "action": "current_date",
+            "set_on_update": false
+          },
+          "updated_date": {
+            "action": "current_date"
+          }
+        }
+      }
+    }
+  ]
+}

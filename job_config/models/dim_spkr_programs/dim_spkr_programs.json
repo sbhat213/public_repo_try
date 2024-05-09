@@ -1,0 +1,334 @@
+{
+  "name": "dim_spkr_programs",
+  "path": "s3://idpmonjuvietljobs-sit/tables/dim_spkr_programs",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_dim_spkr_programs_v2",
+  "fields": [
+    {
+      "name": "spkr_prog_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prog_code",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "geo_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "rep_frst_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "rep_last_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "geo_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "area_mgr_frst_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "area_mgr_last_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "area_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "area_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "region_dir_frst_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "region_dir_lastst_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "region_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "region_name",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "evnt_coord",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "evnt_status",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "evnt_canc_reas",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "prestn_mode",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "sub_prestn_mode",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "sb_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "network_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "evnt_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "evnt_topic",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "evnt_title",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "prod_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "abbr_title",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "tumor",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "no_confr_attendees",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "no_of_attendees",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "out_of_pckt_amt",
+      "data_type": "decimal",
+      "length": 14,
+      "core_field": true
+    },
+    {
+      "name": "honorarium_amt",
+      "data_type": "decimal",
+      "length": 14,
+      "core_field": true
+    },
+    {
+      "name": "evnt_fee",
+      "data_type": "decimal",
+      "length": 14,
+      "core_field": true
+    },
+    {
+      "name": "evnt_start_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "evnt_start_time",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "evnt_end_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "evnt_end_time",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "venue",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "addr_line_1",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "addr_line_2",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "addr_line_3",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "state",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "zip",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "cancl_email_sent_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "meal_cost",
+      "data_type": "decimal",
+      "length": 14,
+      "core_field": true
+    },
+    {
+      "name": "flex_field1",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "flex_field2",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "flex_field3",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "src_sys_nm",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    }
+  ]
+}

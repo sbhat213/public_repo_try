@@ -1,0 +1,15 @@
+{
+  "id": "clean_Up_Obsolete_Files_weekly",
+  "model": "clean_Up_Obsolete_Files",
+  "process_config": "clean_Up_Obsolete_Files",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": [],
+  "frequency": {
+    "schedule_interval": "weekly"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

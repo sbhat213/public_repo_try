@@ -1,0 +1,195 @@
+{
+  "name": "mor_inc_rte",
+  "path": "s3://idpmonjuvietljobs-sit/tables/mor_inc_rte",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_mor_inc_rte",
+  "fields": [
+    {
+      "name": "sent_email_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "sent_email_type",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "email_actvty_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "mdm_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "receiver_crm_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "receiver_npi_num",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "receiver_acct_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "receiver_email",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "call_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "prod_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "email_sent_dt",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "email_sbjct",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "sender_email",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "sender_id",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "sender_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "actvty_id_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "email_actvty_dt",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "email_status",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "failure_msg",
+      "data_type": "varchar",
+      "length": 65535,
+      "core_field": true
+    },
+    {
+      "name": "evnt_status",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "click_url",
+      "data_type": "varchar",
+      "length": 250,
+      "core_field": true
+    },
+    {
+      "name": "browser_nm",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "vault_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "vault_status",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "vault_instnc",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "device_type",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "sf_typ",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },{
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    }
+  ]
+}

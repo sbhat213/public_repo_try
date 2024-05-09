@@ -1,0 +1,112 @@
+{
+  "name": "incyte_mon_salesreps",
+  "path": "s3://idpmonjuvietljobs-sit/tables/incyte_mon_salesreps",
+  "partition_key": "NA",
+  "primary_key": "externalemployeeid",
+  "composite_key": ["externalemployeeid"],
+  "table_name": "i2dp_tbl_incyte_mon_salesreps",
+  "fields": [
+      {
+        "name": "company",
+        "data_type": "varchar",
+        "length": 50,
+        "core_field": true
+      },
+      {
+        "name": "territoryid",
+        "data_type": "bigint",
+        "length": 25,
+        "core_field": true
+      },
+      {
+        "name": "teamid",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "teamname",
+        "data_type": "varchar",
+        "length": 20,
+        "core_field": true
+      },
+      {
+        "name": "externalemployeeid",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "firstname",
+        "data_type": "varchar",
+        "length": 150,
+        "core_field": true
+      },
+      {
+        "name": "lastname",
+        "data_type": "varchar",
+        "length": 150,
+        "core_field": true
+      },
+      {
+        "name": "position",
+        "data_type": "varchar",
+        "length": 50,
+        "core_field": true
+      },
+    {
+      "name": "city",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "state",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "phone",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "email",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "fax",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "active",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+*.py[cod]
+.idea/*
+.vs/
+.vscode
+.coverage
+.ipynb_checkpoints/*
+dump.rdb
+/data/*
+/logs/*
+env/*
+venv/*
+
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+services/identity/.idea/
+.idea/*
+*.iws
+*.iml
+*.ipr
+
+
+### VS Code ###
+.vscode/
+
+*.swp
+package-lock.json
+__pycache__
+.pytest_cache
+.env
+*.egg-info
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+

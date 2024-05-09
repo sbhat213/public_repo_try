@@ -1,0 +1,71 @@
+{
+  "name": "mor_inc_call_dtls",
+  "path": "s3://idpmonjuvietljobs-sit/tables/mor_inc_call_dtls",
+  "partition_key": "NA",
+  "primary_key": "call_dtl_id",
+  "composite_key": ["call_dtl_id"],
+  "table_name": "i2dp_tbl_mor_inc_call_dtls",
+  "fields": [
+    {
+      "name": "call_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "call_dtl_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "is_prnt_call",
+      "data_type": "varchar",
+      "length": 2,
+      "core_field": true
+    },
+    {
+      "name": "product_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "product_desc",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "detail_priority",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "detail_type",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}
+

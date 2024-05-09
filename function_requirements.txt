@@ -1,0 +1,5 @@
+injector==0.18.4
+pynamodb==4.3.3
+requests==2.25.1
+bson==0.5.10
+watchtower==1.0.1

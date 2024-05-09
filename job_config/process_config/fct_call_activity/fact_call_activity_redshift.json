@@ -1,0 +1,14 @@
+{
+  "name": "fact_call_activity_redshift",
+  "depends_on": [],
+  "global_map": {},
+  "steps": [
+    {
+      "name": "truncateTable",
+      "params": {
+        "flag": "false",
+        "condition": []
+      }
+    }
+  ]
+}

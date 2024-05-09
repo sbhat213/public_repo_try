@@ -1,0 +1,52 @@
+{
+  "IDP-Pvt-vpc": {
+    "managed_prefix_list": [
+      {
+        "prefix_list_name": "us-east-1.dynamodb",
+        "address_family": "IPv4",
+        "max_entries": 1
+      },
+      {
+        "prefix_list_name": "us-east-1.s3",
+        "address_family": "IPv4",
+        "max_entries": 1
+      }
+    ],
+    "endpoints": [
+      {
+        "endpoint_type": "Interface",
+        "service_name": "com.amazonaws.us-east-1.logs",
+        "subnet_names": [
+          "IDP-Pvt-Sub-1",
+          "IDP-Pvt-Sub-2"
+        ]
+      },
+      {
+        "endpoint_type": "Gateway",
+        "service_name": "com.amazonaws.us-east-1.s3",
+        "subnet_names": []
+      },
+      {
+        "endpoint_type": "Interface",
+        "service_name": "com.amazonaws.us-east-1.elasticmapreduce",
+        "subnet_names": [
+          "IDP-Pvt-Sub-1",
+          "IDP-Pvt-Sub-2"
+        ]
+      },
+      {
+        "endpoint_type": "Gateway",
+        "service_name": "com.amazonaws.us-east-1.dynamodb",
+        "subnet_names": []
+      },
+      {
+        "endpoint_type": "Interface",
+        "service_name": "com.amazonaws.us-east-1.redshift",
+        "subnet_names": [
+          "IDP-Pvt-Sub-1",
+          "IDP-Pvt-Sub-2"
+        ]
+      }
+    ]
+  }
+}

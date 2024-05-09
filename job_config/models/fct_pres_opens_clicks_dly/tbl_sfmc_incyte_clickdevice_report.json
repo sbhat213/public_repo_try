@@ -1,0 +1,148 @@
+{
+  "name": "sfmc_incyte_clickdevice_report",
+  "path": "s3://idpmonjuvietljobs-sit/tables/sfmc_incyte_clickdevice_report",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_sfmc_incyte_clickdevice_report",
+  "fields": [
+      {
+        "name": "account_id",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "date",
+        "data_type": "date",
+        "length": 25,
+        "core_field": true
+      },
+      {
+        "name": "browser",
+        "data_type": "varchar",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "client_id",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "device",
+        "data_type": "varchar",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "email_address",
+        "data_type": "varchar",
+        "length": 150,
+        "core_field": true
+      },
+      {
+        "name": "email_client",
+        "data_type": "varchar",
+        "length": 150,
+        "core_field": true
+      },
+      {
+        "name": "event_type",
+        "data_type": "varchar",
+        "length": 50,
+        "core_field": true
+      },
+      {
+        "name": "is_unique",
+        "data_type": "varchar",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "is_unique_for_url",
+        "data_type": "varchar",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "list_id",
+        "data_type": "bigint",
+        "length": 20,
+        "core_field": true
+      },
+      {
+        "name": "operating_system",
+        "data_type": "varchar",
+        "length": 50,
+        "core_field": true
+      },
+      {
+        "name": "send_id",
+        "data_type": "bigint",
+        "length": 20,
+        "core_field": true
+      },
+      {
+        "name": "send_url_id",
+        "data_type": "bigint",
+        "length": 20,
+        "core_field": true
+      },
+      {
+        "name": "subscriber_id",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "url",
+        "data_type": "varchar",
+        "length": 65535,
+        "core_field": true
+      },
+      {
+        "name": "url_id",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "subscriber_key",
+        "data_type": "bigint",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "account_name",
+        "data_type": "varchar",
+        "length": 150,
+        "core_field": true
+      },
+      {
+        "name": "load_date_time",
+        "data_type": "datetime",
+        "length": 30,
+        "core_field": true
+      },
+      {
+        "name": "created_date",
+        "data_type": "datetime",
+        "length": 50,
+        "core_field": false
+      },
+      {
+        "name": "updated_date",
+        "data_type": "datetime",
+        "length": 50,
+        "core_field": false
+      },
+      {
+        "name": "row_hash",
+        "data_type": "varchar",
+        "length": 200,
+        "core_field": false
+      }
+  ]
+}

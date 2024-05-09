@@ -1,0 +1,76 @@
+{
+  "name": "incyte_mon_hcp_opt",
+  "path": "s3://idpmonjuvietljobs-sit/tables/incyte_mon_hcp_opt",
+  "partition_key": "NA",
+  "primary_key": "NA",
+  "composite_key": ["prof_id","opt_topic"],
+  "table_name": "i2dp_tbl_incyte_mon_hcp_opt",
+  "fields": [
+    {
+      "name": "prof_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "npi",
+      "data_type": "bigint",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "morcrmid",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "source",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "opt_topic",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "opt_date",
+      "data_type": "timestamp",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "opt_type",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    },
+    {
+      "name": "unique_id",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

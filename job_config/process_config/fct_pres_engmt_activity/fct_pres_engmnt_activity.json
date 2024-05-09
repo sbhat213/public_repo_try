@@ -1,0 +1,270 @@
+{
+  "name": "fct_pres_engmt_activity_incremental",
+  "depends_on": [
+    "mor_inc_engmnt",
+    "customer_master"
+  ],
+  "global_map": {
+    "core": {
+      "engmt_id": {
+        "field": "unique_id",
+        "set_on_update": false
+      }
+    },
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "mor_inc_engmnt",
+          "type": "single"
+        },
+        "filter": {
+          "src_call_id": {
+            "field": "call_id"
+          }
+        },
+        "matched": {
+          "_": {
+            "field": "updated_date",
+            "comparison": "greater",
+            "action": "last_execution_date"
+          }
+        },
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        },
+        "map": {
+          "src_call_id": {
+            "field": "call_id"
+          },
+          "src_call_nm": {
+            "field": "call_nm"
+          },
+          "call_type": {
+            "field": "call_type"
+          },
+          "call_date": {
+            "field": "call_dt"
+          },
+          "frst_name": {
+            "field": "first_nm"
+          },
+          "last_name": {
+            "field": "last_nm"
+          },
+          "address_line_1": {
+            "field": "addr_ln_1"
+          },
+          "address_line_2": {
+            "field": "addr_ln_2"
+          },
+          "state": {
+            "field": "st"
+          },
+          "city": {
+            "field": "city"
+          },
+          "zip": {
+            "field": "zip"
+          },
+          "zip_4": {
+            "field": "sec_zip"
+          },
+          "attendee_type": {
+            "field": "attendee_type"
+          },
+          "call_status": {
+            "field": "call_status"
+          },
+          "comp_prod_flg": {
+            "field": "comp_flag"
+          },
+          "cot": {
+            "field": "cot"
+          },
+          "src_crm_id": {
+            "field": "crm_id"
+          },
+          "dea_num": {
+            "field": "dea_num"
+          },
+          "dtl_prod": {
+            "field": "dtl_prod"
+          },
+          "call_dur_in_secs": {
+            "field": "duration"
+          },
+          "email_addr": {
+            "field": "email"
+          },
+          "entity_type": {
+            "field": "entity_type"
+          },
+          "geo_id": {
+            "field": "geo_id"
+          },
+          "hin": {
+            "field": "hin"
+          },
+          "is_academic": {
+            "field": "is_academic"
+          },
+          "is_community": {
+            "field": "is_community"
+          },
+          "is_deleted": {
+            "field": "is_deleted"
+          },
+          "is_prnt_call": {
+            "field": "is_prnt_call"
+          },
+          "prnt_call": {
+            "field": "prnt_call_id"
+          },
+          "is_smpl_call": {
+            "field": "is_smpl_call"
+          },
+          "kaiser_f": {
+            "field": "kaiser"
+          },
+          "lat": {
+            "field": "lat"
+          },
+          "long": {
+            "field": "long"
+          },
+          "src_mdm_id": {
+            "field": "mdm_id"
+          },
+          "npi_num": {
+            "field": "npi_num"
+          },
+          "pdrp_flg": {
+            "field": "pdrp_flg"
+          },
+          "phone": {
+            "field": "phone"
+          },
+          "prod_id": {
+            "field": "prod_id"
+          },
+          "quintile": {
+            "field": "quintile"
+          },
+          "segment": {
+            "field": "segment"
+          },
+          "sf_typ": {
+            "field": "sf_typ"
+          },
+          "spec": {
+            "field": "spec"
+          },
+          "spec_nm": {
+            "field": "spec_nm"
+          },
+          "tgt_status": {
+            "field": "tgt_status"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "customer_master",
+          "type": "single"
+        },
+        "filter": {
+          "src_mdm_id": {
+            "field": "mdm_pres_id",
+            "operator": "or"
+          },
+          "npi_num": {
+            "field": "npi_num",
+            "operator": "or"
+          },
+          "src_crm_id": {
+            "field": "src_crm_id",
+            "operator": "or"
+          }
+        },
+        "matched": {
+          "pres_id": {
+            "field": "pres_id",
+            "comparison": "not_or_null"
+          }
+        },
+        "skip_global_core_map": true,
+        "skip_insert": true,
+        "map": {
+          "pres_id": {
+            "field": "pres_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "ValidateData",
+      "params": {
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "skip_insert": true,
+        "join": {
+          "type": "self"
+        },
+        "filter": {
+          "src_call_id": {
+            "field": "src_call_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}

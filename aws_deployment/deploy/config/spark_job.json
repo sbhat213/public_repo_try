@@ -1,0 +1,44 @@
+{
+  "global": {
+    "source_path": "D:\\Shared\\Indegene\\",
+    "source_app_path": "",
+    "deploy_app_path": "job\\",
+    "deploy_path": "D:\\Shared\\build\\",
+    "external_dependencies": [
+      "shared",
+      "aws_cloud",
+      "job_config",
+      "data_processor",
+      "core",
+      "settings.py"
+    ],
+    "internal_dependencies": [
+    ],
+    "file_dependencies": [
+    ]
+  },
+  "steps": [
+    {
+      "name": "python-dependency",
+      "deploy_app_path": "",
+      "deploy": "False",
+      "aws": {
+        "layer_name": "function-dependency",
+        "bucket": "idpmonjuvietljobs-sit",
+        "dir": "SourceFeeds/1-spark/"
+      },
+      "action": "PythonEnvironment",
+      "requirements_path": "process_job_requirements.txt"
+    },
+    {
+      "name": "spark-job",
+      "deploy": "True",
+      "aws": {
+        "bucket": "idpmonjuvietljobs-sit",
+        "dir": "SourceFeeds/1-spark/"
+      },
+      "processor_file": "data_processor/processor.py",
+      "action": "SparkJob"
+    }
+  ]
+}

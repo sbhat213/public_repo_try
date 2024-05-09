@@ -1,0 +1,134 @@
+{
+  "name": "fct_pres_engmt_activity_dtl_incremental",
+  "depends_on": [
+    "mor_inc_engmnt_dtls",
+    "fct_pres_engmt_activity"
+  ],
+  "global_map": {
+    "core": {},
+    "audit": {
+      "created_by": {
+        "action": "job_name",
+        "set_on_update": false
+      },
+      "updated_by": {
+        "action": "job_name"
+      },
+      "created_date": {
+        "action": "current_date",
+        "set_on_update": false
+      },
+      "updated_date": {
+        "action": "current_date"
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "ReadDeltaTable"
+    },
+    {
+      "name": "DeleteDeltaRecord",
+      "params": {
+        "filter_column": "src_sys_nm",
+        "filter_value": "MOR_INC_ENGMNT_DTLS"
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "mor_inc_engmnt_dtls",
+          "type": "single"
+        },
+        "filter": {
+          "row_hash": {
+            "field": "row_hash"
+          }
+        },
+        "skip_update": true,
+        "map": {
+          "engmt_dtl_msg_id": {
+            "field": "unique_id"
+          },
+          "call_id": {
+            "field": "call_id"
+          },
+          "call_dtl_id": {
+            "field": "call_dtl_id"
+          },
+          "prod_id": {
+            "field": "product_id"
+          },
+          "prod_desc": {
+            "field": "product_desc"
+          },
+          "dtl_priority": {
+            "field": "detail_priority"
+          },
+          "dtl_type": {
+            "field": "detail_type"
+          },
+          "dcsn_id": {
+            "field": "dcsn_id"
+          },
+          "dcsn_topic": {
+            "field": "dcsn_topc"
+          },
+          "src_sys_nm": {
+            "value": "MOR_INC_ENGMNT_DTLS",
+            "action": "fixed"
+          },
+          "row_hash": {
+            "field": "row_hash"
+          }
+        }
+      }
+    },
+    {
+      "name": "MergeTable",
+      "params": {
+        "join": {
+          "with": "fct_pres_engmt_activity",
+          "type": "single"
+        },
+        "filter": {
+          "call_id": {
+            "field": "src_call_id"
+          }
+        },
+        "matched": {
+          "engmt_id": {
+            "field": "engmt_id",
+            "comparison": "not_or_null"
+          }
+        },
+        "skip_global_core_map": true,
+        "skip_insert": true,
+        "map": {
+          "engmt_id": {
+            "field": "engmt_id"
+          }
+        }
+      }
+    },
+    {
+      "name": "SelectData",
+      "params": {
+        "where": {
+          "updated_date": {
+            "action": "last_execution_date",
+            "comparison": "greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "SaveCSV",
+      "params": {
+        "to": "temp",
+        "overwrite": true
+      }
+    }
+  ]
+}

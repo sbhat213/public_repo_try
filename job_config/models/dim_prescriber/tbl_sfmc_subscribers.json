@@ -1,0 +1,82 @@
+{
+  "name": "sfmc_subscriber",
+  "path": "s3://idpmonjuvietljobs-sit/tables/sfmc_subscribers",
+  "partition_key": "NA",
+  "primary_key": "subscriber_key",
+  "composite_key": ["subscriber_key"],
+  "table_name": "i2dp_tbl_sfmc_subscribers",
+  "fields": [
+    {
+      "name": "account_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "date",
+      "data_type": "date",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "subscriber_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "email_address",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "status",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "subscriber_key",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "unsubscribed_date",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "account_name",
+      "data_type": "varchar",
+      "length": 150,
+      "core_field": true
+    },
+    {
+      "name": "load_date_time",
+      "data_type": "varchar",
+      "length": 25,
+      "core_field": true
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 50,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

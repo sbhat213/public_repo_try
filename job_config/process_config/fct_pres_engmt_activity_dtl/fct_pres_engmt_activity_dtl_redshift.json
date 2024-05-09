@@ -1,0 +1,14 @@
+{
+  "name": "fct_pres_engmt_activity_dtl_redshift",
+  "depends_on": [],
+  "global_map": {},
+  "steps": [
+    {
+      "name": "truncateTable",
+      "params": {
+        "flag": "true",
+        "condition": []
+      }
+    }
+  ]
+}

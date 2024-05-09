@@ -1,0 +1,52 @@
+{
+  "name": "fct_pres_email_actvy_stat",
+  "path": "s3://idpmonjuvietljobs-sit/tables/fct_pres_email_actvy_stat",
+  "partition_key": "NA",
+  "primary_key": "src_mdm_id",
+  "composite_key": ["src_mdm_id"],
+  "table_name": "i2dp_tbl_fct_pres_email_actvy_stat_v2",
+  "fields": [
+    {
+      "name": "pres_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": false
+    },
+    {
+      "name": "src_mdm_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "actvy_status",
+      "data_type": "char",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": true
+    }
+  ]
+}

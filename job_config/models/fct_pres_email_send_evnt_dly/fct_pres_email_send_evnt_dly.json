@@ -1,0 +1,154 @@
+{
+  "name": "fct_pres_email_send_evnt_dly",
+  "path": "s3://idpmonjuvietljobs-sit/tables/fct_pres_email_send_evnt_dly",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_fct_pres_email_send_evnt_dly_v2",
+  "fields": [
+    {
+      "name": "pres_id",
+      "data_type": "varchar",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "subscriber_key",
+      "data_type": "bigint",
+      "length": 30,
+      "core_field": true
+    },
+    {
+      "name": "externalrequestid",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "evnt_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "sender_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "from_name",
+      "data_type": "varchar",
+      "length": 130,
+      "core_field": true
+    },
+    {
+      "name": "from_email_addr",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "email_subj",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": true
+    },
+    {
+      "name": "email_name",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "acty_status",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "url_txt",
+      "data_type": "varchar",
+      "length": 500,
+      "core_field": true
+    },
+    {
+      "name": "is_multipart",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "addl_comments",
+      "data_type": "varchar",
+      "length": 500,
+      "core_field": true
+    },
+    {
+      "name": "total_pres_sent",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "no_of_hard_bounces",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "no_of_soft_bounces",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "uniq_clicks_cnt",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "uniq_opens_cnt",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "uniq_unsubs_cnt",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

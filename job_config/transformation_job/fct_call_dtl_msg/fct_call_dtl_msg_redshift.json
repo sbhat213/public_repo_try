@@ -1,0 +1,15 @@
+{
+  "id": "fct_call_dtl_msg_to_redshift",
+  "model": "fct_call_dtl_msg",
+  "process_config": "fct_call_dtl_msg_redshift",
+  "active": true,
+  "status": 0,
+  "is_dependent": true,
+  "dependent_jobs": [],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 0
+}

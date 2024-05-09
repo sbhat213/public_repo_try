@@ -1,0 +1,15 @@
+{
+  "id": "customer_master_daily",
+  "model": "customer_master",
+  "process_config": "customer_master_incremental",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["customer_master_to_redshift"],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

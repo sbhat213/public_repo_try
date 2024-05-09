@@ -1,0 +1,24 @@
+{
+  "name": "clean_Up_Obsolete_Files",
+  "path": "s3://idpmonjuvietljobs-sit/tables/clean_Up_Obsolete_Files",
+  "partition_key": "NA",
+  "primary_key": "NA",
+  "composite_key": [
+    "NA"
+  ],
+  "table_name": "clean_Up_Obsolete_Files",
+  "fields": [
+    {
+      "name": "NA",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "NA",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    }
+  ]
+}

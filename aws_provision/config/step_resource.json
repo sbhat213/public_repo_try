@@ -1,0 +1,34 @@
+{
+  "job_scheduler": {
+    "lambda_functions": [
+      "create_emr_cluster",
+      "terminate_emr",
+      "check_available_files",
+      "check_emr_cluster",
+      "schedule_jobs",
+      "getActiveEmr"
+    ],
+    "role":"job_scheduler_role"
+  },
+  "spark_job": {
+    "lambda_functions": [
+      "run_spark_job",
+      "copy_to_redshift"
+    ],
+    "role":"spark_job_role"
+  },
+  "check_spark_state": {
+    "lambda_functions": [
+      "wait_run_spark_job",
+      "send_failure_notification"
+    ],
+    "role":"spark_job_role"
+  },
+  "update_spark_state_scheduler": {
+    "lambda_functions": [
+      "check_inprogress_files",
+      "check_scheduled_jobs"
+    ],
+    "role":"spark_job_role"
+  }
+}

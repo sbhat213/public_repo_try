@@ -1,0 +1,137 @@
+{
+  "name": "fct_pres_opens_clicks_dly",
+  "path": "s3://idpmonjuvietljobs-sit/tables/fct_pres_opens_clicks_dly",
+  "partition_key": "NA",
+  "primary_key": "row_hash",
+  "composite_key": ["row_hash"],
+  "table_name": "i2dp_tbl_fct_pres_opens_clicks_dly_v2",
+  "fields": [
+    {
+      "name": "pres_id",
+      "data_type": "varchar",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "subscriber_key",
+      "data_type": "bigint",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "src_subscriber_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "evnt_date",
+      "data_type": "date",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "evnt_type",
+      "data_type": "varchar",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "sender_id",
+      "data_type": "bigint",
+      "length": 20,
+      "core_field": true
+    },
+    {
+      "name": "url_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "url_txt",
+      "data_type": "varchar",
+      "length": 500,
+      "core_field": true
+    },
+    {
+      "name": "brwsr",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "device",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "email_addr",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": true
+    },
+    {
+      "name": "email_clnt",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+
+    {
+      "name": "is_unique",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "is_unique_for_url",
+      "data_type": "char",
+      "length": 1,
+      "core_field": true
+    },
+    {
+      "name": "list_id",
+      "data_type": "bigint",
+      "length": 10,
+      "core_field": true
+    },
+    {
+      "name": "os",
+      "data_type": "varchar",
+      "length": 50,
+      "core_field": true
+    },
+    {
+      "name": "created_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "created_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "updated_by",
+      "data_type": "varchar",
+      "length": 100,
+      "core_field": false
+    },
+    {
+      "name": "updated_date",
+      "data_type": "datetime",
+      "length": 30,
+      "core_field": false
+    },
+    {
+      "name": "row_hash",
+      "data_type": "varchar",
+      "length": 200,
+      "core_field": false
+    }
+  ]
+}

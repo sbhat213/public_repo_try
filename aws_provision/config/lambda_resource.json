@@ -1,0 +1,100 @@
+{
+  "create_emr_cluster": {
+    "handler_name": "job_steps.create_emr_cluster.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "remove_emr_cluster": {
+    "handler_name": "job_steps.remove_emr_cluster.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "check_available_files": {
+    "handler_name": "job_steps.check_available_files.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "check_emr_cluster": {
+    "handler_name": "job_steps.check_emr_cluster.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "schedule_job": {
+    "handler_name": "job_steps.schedule_job.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "get_active_emr": {
+    "handler_name": "job_steps.getActiveEmr.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "run_spark_job": {
+    "handler_name": "job_steps.run_spark_job.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": true,
+    "add_event": false
+  },
+  "copy_to_redshift": {
+    "handler_name": "job_steps.copy_to_redshift.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "wait_run_spark_job": {
+    "handler_name": "job_steps.wait_run_spark_job.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": true,
+    "add_event": false
+  },
+  "check_inprogress_files": {
+    "handler_name": "job_steps.check_inprogress_files.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "check_scheduled_jobs": {
+    "handler_name": "job_steps.check_scheduled_jobs.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "send_failure_notification": {
+    "handler_name": "job_steps.send_failure_notification.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  },
+  "save_source_file": {
+    "handler_name": "job_steps.save_source_file.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": true
+  },
+  "wait_cluster_creation": {
+    "handler_name": "job_steps.wait_cluster_creation.handler.lambda_handler",
+    "handler_path": "./lambda",
+    "role": "LambdaExecutionRole",
+    "vpc": false,
+    "add_event": false
+  }
+}

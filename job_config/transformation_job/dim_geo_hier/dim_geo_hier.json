@@ -1,0 +1,15 @@
+{
+  "id": "dim_geo_hier_daily",
+  "model": "dim_geo_hier",
+  "process_config": "dim_geo_hier_incremental",
+  "active": true,
+  "status": 0,
+  "is_dependent": false,
+  "dependent_jobs": ["dim_geo_hier_to_redshift"],
+  "frequency": {
+    "schedule_interval": "daily"
+  },
+  "retry_count": 0,
+  "last_execution_detail": {},
+  "job_type": 1
+}

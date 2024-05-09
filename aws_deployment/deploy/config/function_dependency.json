@@ -1,0 +1,28 @@
+{
+  "global": {
+    "source_path": "D:\\Shared\\Indegene\\",
+    "source_app_path": "",
+    "deploy_app_path": "function-dependency\\",
+    "deploy_path": "D:\\Shared\\build\\",
+    "external_dependencies": [
+    ],
+    "internal_dependencies": [
+    ],
+    "file_dependencies": [
+    ]
+  },
+  "steps": [
+    {
+      "name": "function-dependency",
+      "deploy_app_path": "python/lib/python3.8/site-packages/",
+      "deploy": "True",
+      "aws": {
+        "layer_name": "function-dependency",
+        "bucket": "idpmonjuvietljobs-sit",
+        "dir": "SourceFeeds/1-deploy/"
+      },
+      "action": "PythonEnvironment",
+      "requirements_path": "function_requirements.txt"
+    }
+  ]
+}
